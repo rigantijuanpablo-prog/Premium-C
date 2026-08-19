@@ -507,24 +507,69 @@
         </div>
     </footer>
 
-    <!-- 8. INTERACCIONES Y LÓGICA JAVASCRIPT -->
+       <!-- INTERACCIONES Y LÓGICA JAVASCRIPT PREMIUM -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
+            
+            // ==========================================
+            // 1. CONTROL DE PRELOADER DE MARCA
+            // ==========================================
+            const preloader = document.getElementById("preloader");
+            if (preloader) {
+                // Al cargarse la estructura, desvanecemos suavemente el fondo protector
+                window.addEventListener("load", () => {
+                    setTimeout(() => {
+                        preloader.classList.add("ocultar");
+                    }, 600); // 600ms de branding intencional refinado
+                });
+                
+                // Mecanismo de respaldo por si el evento 'load' tarda en dispararse
+                setTimeout(() => {
+                    preloader.classList.add("ocultar");
+                }, 1500);
+            }
+
+            // ==========================================
+            // 2. SMART HEADER (MENÚ INTELIGENTE DE SCROLL INVERSO)
+            // ==========================================
             const navbar = document.querySelector("header");
+            let ultimoScrollTop = 0;
+            const margenDesplazamiento = 5; // Evita parpadeos por movimientos milimétricos
+
             if (navbar) {
                 window.addEventListener("scroll", () => {
-                    if (window.scrollY > 40) {
+                    let scrollTopActual = window.pageYOffset || document.documentElement.scrollTop;
+                    
+                    // Control de tamaño y opacidad base (Tu efecto original "Scrolled")
+                    if (scrollTopActual > 40) {
                         navbar.classList.add("scrolled");
                     } else {
                         navbar.classList.remove("scrolled");
                     }
+
+                    // Lógica de Scroll Inverso Inteligente
+                    if (Math.abs(ultimoScrollTop - scrollTopActual) <= margenDesplazamiento) return;
+                    
+                    if (scrollTopActual > ultimoScrollTop && scrollTopActual > 120) {
+                        // Usuario baja: ocultamos el navbar para dar espacio limpio de lectura
+                        navbar.classList.add("nav-oculto");
+                    } else {
+                        // Usuario sube o está arriba de todo: reaparece el menú de inmediato
+                        navbar.classList.remove("nav-oculto");
+                    }
+                    
+                    ultimoScrollTop = scrollTopActual;
                 });
             }
 
+            // ==========================================
+            // 3. INTERSECTION OBSERVER (REVELADO SUAVE DE TEXTOS)
+            // ==========================================
             const revealElements = document.querySelectorAll(".reveal-element");
-            const revealOptions = { 
-                threshold: 0.12, 
-                rootMargin: "0px 0px -40px 0px" 
+            
+            const revealOptions = {
+                threshold: 0.12,
+                rootMargin: "0px 0px -40px 0px"
             };
 
             const revealObserver = new IntersectionObserver((entries, observer) => {
@@ -536,13 +581,37 @@
                 });
             }, revealOptions);
 
-            revealElements.forEach(element => { 
-                revealObserver.observe(element); 
+            revealElements.forEach(element => {
+                revealObserver.observe(element);
             });
         });
+
+        // ==========================================
+        // 4. LÓGICA DEL SELECTOR DE IDIOMAS LÍQUIDO
+        // ==========================================
+        function cambiarIdioma(codigoIdioma, botonSeleccionado) {
+            // Remover clase activa de todos los botones de ese contenedor
+            const botones = botonSeleccionado.parentElement.querySelectorAll(".btn-idioma");
+            botones.forEach(btn => btn.classList.remove("activo"));
+            
+            // Activar el botón correspondiente
+            botonSeleccionado.classList.add("activo");
+            
+            // Desplazar el indicador líquido de fondo (efecto muelle de Apple)
+            const indicador = document.getElementById("indicadorIdioma");
+            if (indicador) {
+                if (codigoIdioma === 'en') {
+                    // Se desplaza horizontalmente hacia el segundo botón (EN)
+                    indicador.style.transform = "translateX(44px)";
+                } else {
+                    // Regresa a la posición inicial (ES)
+                    indicador.style.transform = "translateX(0px)";
+                }
+            }
+            
+            // Aquí puedes disparar tu lógica futura de traducción de contenidos
+            console.log(`Entorno institucional cambiado a: ${codigoIdioma.toUpperCase()}`);
+        }
     </script>
 </body>
 </html>
- 
-
-   
