@@ -171,8 +171,8 @@
             top: 0;
             left: 0;
             width: 100%;
-            background-color: rgba(7, 14, 27, 0.85); /* Bajamos opacidad para potenciar el blur */
-            backdrop-filter: blur(20px);              /* Desenfoque más profundo */
+            background-color: rgba(7, 14, 27, 0.85); 
+            backdrop-filter: blur(20px);              
             -webkit-backdrop-filter: blur(20px);
             padding: 24px 8%;
             display: flex;
@@ -184,7 +184,7 @@
         }
 
         header.scrolled {
-            padding: 14px 8%; /* Reducción elegante al hacer scroll */
+            padding: 14px 8%; 
             background-color: rgba(7, 14, 27, 0.95);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
@@ -256,12 +256,9 @@
             text-transform: uppercase;
             font-weight: 500;
             letter-spacing: 2px;
-            transition: color 0.3s var(--bezier-premium);
-            position: relative;
-            padding: 6px 0;
         }
 
-        nav ul li a:hover {
+nav ul li a:hover {
             color: var(--color-secundario);
         }
 
@@ -291,7 +288,8 @@
             opacity: 1;
             transform: translateY(0);
         }
-/* --- SECCIONES ESTRUCTURALES GENERALES --- */
+
+        /* --- SECCIONES ESTRUCTURALES GENERALES --- */
         section {
             padding: 140px 12%;
             clear: both;
@@ -353,7 +351,7 @@
         }
 
         .tarjeta-valor:hover {
-            transform: translateX(6px); /* Microinteracción premium al leer los valores */
+            transform: translateX(6px);
         }
 
         .tarjeta-valor h4 {
@@ -383,7 +381,6 @@
             padding: 55px 40px;
             border: 1px solid rgba(7, 14, 27, 0.06);
             border-radius: 4px;
-            /* Acoplado nativamente a nuestro sistema de microanimaciones fluidas */
             transition: opacity 1s var(--bezier-premium), transform 1.1s var(--bezier-premium), border-color 0.4s var(--bezier-premium), box-shadow 0.4s var(--bezier-premium);
         }
 
@@ -485,7 +482,7 @@
         }
 
         .boton-enviar:hover {
-            background-color: #152238; /* Azul ligeramente más claro para el hover */
+            background-color: #152238;
             transform: translateY(-2px);
         }
 
@@ -549,7 +546,7 @@
 
         <!-- Ítem Teléfono -->
         <a href="tel:+541143215555" class="item-flotante" title="Llamar">
-            <span class="texto-flotante">LLAMAR</span>
+             <span class="texto-flotante">LLAMAR</span>
             <div class="icono-flotante">
                 <svg xmlns="http://w3.org" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
             </div>
@@ -558,292 +555,97 @@
         <!-- Ítem Ubicación -->
         <a href="#contacto" class="item-flotante" title="Sede Central">
             <span class="texto-flotante">UBICACIÓN</span>
- <!-- Ítem Ubicación -->
-        <a href="#contacto" class="item-flotante" title="Sede Central">
-            <span class="texto-flotante">UBICACIÓN</span>
             <div class="icono-flotante">
                 <svg xmlns="http://w3.org" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
             </div>
         </a>
     </div>
-
-    <!-- PORTADA CON VIDEO DE FONDO MINIMALISTA -->
-    <section id="inicio" class="hero-principal" style="position: relative; overflow: hidden; background-color: var(--color-primario); min-height: 100vh; display: flex; align-items: center; justify-content: center;">
-        
-        <!-- Video ambiental con poster de respaldo (evita mensajes de error de texto en pantalla) -->
-        <video autoplay muted loop playsinline preload="auto" poster="rgma2.png" style="position: absolute; top: 50%; left: 50%; width: 100%; height: 100%; z-index: 1; transform: translate(-50%, -50%); object-fit: cover;">
-            <source src="video-rgma.mp4" type="video/mp4">
-        </video>
-
-        <!-- Filtro cinemático de contraste corporativo -->
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(7, 14, 27, 0.75), rgba(7, 14, 27, 0.9)); z-index: 2;"></div>
-
-        <!-- Textos institucionales equilibrados -->
-        <div class="reveal-element" style="position: relative; z-index: 3; text-align: center; color: #ffffff; max-width: 900px; padding: 0 20px; margin: 0 auto;">
-            <h1 style="font-family: var(--fuente-titulos); font-size: 2.8rem; font-weight: 500; letter-spacing: 2px; line-height: 1.3; margin-bottom: 25px;">Trayectoria Legal con una Perspectiva de Vanguardia</h1>
-            <p style="margin: 0 auto 45px auto; max-width: 700px; text-align: center; color: rgba(255, 255, 255, 0.75); font-size: 1.1rem; font-weight: 300; letter-spacing: 0.5px;">
-                Brindamos soluciones jurídicas estratégicas de alta complejidad para empresas y corporaciones que operan en mercados globales dinámicos.
-            </p>
-            <a href="#contacto" class="boton-enviar" style="display: inline-block; width: auto; padding: 16px 40px; text-decoration: none; text-align: center;">Agendar consulta confidencial</a>
-        </div>
-    </section>
-
-    <!-- SECCIÓN EL ESTUDIO -->
-    <section id="estudio">
-        <div class="encabezado-seccion reveal-element">
-            <h2>El Estudio</h2>
-            <div class="linea-decorativa"></div>
-            <p>Un compromiso absoluto con la excelencia técnica y los más altos estándares éticos de la práctica jurídica internacional.</p>
-        </div>
-        <div class="contenedor-estudio">
-            <div class="texto-estudio reveal-element">
-                <p>Somos una de las firmas jurídicas corporativas líderes de la región, brindando servicios de asesoramiento legal empresarial de excelencia técnica y con un profundo entendimiento de los mercados comerciales dinámicos.</p>
-                <p>Nuestra práctica se caracteriza por estructurar de forma integral las defensas litigiosas y planificaciones fiscales de nuestros clientes, combinando la agilidad procesal de vanguardia con un absoluto estándar ético internacional.</p>
-            </div>
-            <div class="lista-valores reveal-element">
-                <div class="tarjeta-valor">
-                    <h4>Rigurosidad Técnico</h4>
-                    <p>Cada dictamen y estrategia procesal es analizada al máximo detalle técnico por nuestros especialistas.</p>
-                </div>
-                <div class="tarjeta-valor">
-                    <h4>Alcance Corporativo</h4>
-                    <p>Respuestas legales diseñadas a medida para potenciar y blindar el crecimiento empresarial.</p>
-                </div>
-                <div class="tarjeta-valor">
-                    <h4>Transparencia e Integridad</h4>
-                    <p>Estrecha confidencialidad y una ética inquebrantable en cada gestión institucional encomendada.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN ÁREAS DE PRÁCTICA -->
-    <section id="practicas" style="background-color: var(--color-fondo-claro);">
-        <div class="encabezado-seccion reveal-element">
-            <h2>Áreas de Práctica</h2>
-            <div class="linea-decorativa"></div>
-            <p>Asesoramiento multidisciplinario de alta complejidad para transacciones corporativas y defensas de envergadura.</p>
-        </div>
-        <div class="grid-corporativo">
-            <div class="tarjeta-corporativa reveal-element">
-                <h3>Derecho Corporativo & M&A</h3>
-                <p>Estructuración de fusiones, adquisiciones, auditorías legales corporativas de alta gama y contratos societarios complejos.</p>
-            </div>
-            <div class="tarjeta-corporativa reveal-element">
-                <h3>Bancos & Finanzas</h3>
-                <p>Asesoramiento regulatorio bancario, estructuración de fideicomisos comerciales y operaciones financieras internacionales.</p>
-            </div>
-            <div class="tarjeta-corporativa reveal-element">
-                <h3>Litigios & Solución de Controversias</h3>
-                <p>Resolución y representación robusta ante disputas judiciales complejas en fueros comerciales, civiles y administrativos.</p>
-            </div>
-            <div class="tarjeta-corporativa reveal-element">
-                <h3>Derecho Laboral & Empresa</h3>
-                <p>Asesoría en contratación estratégica, reestructuraciones laborales, auditorías preventivas y defensa en litigios de alta complejidad.</p>
-            </div>
-            <div class="tarjeta-corporativa reveal-element">
-                <h3>Propiedad Intelectual</h3>
-                <p>Registro y protección de marcas, patentes, derechos de autor, secretos comerciales y defensa legal contra la competencia desleal.</p>
-            </div>
-            <div class="tarjeta-corporativa reveal-element">
-                <h3>Derecho Tributario & Fiscal</h3>
-                <p>Planeamiento impositivo local e internacional, consultoría estratégica y representación ante inspecciones u organismos fiscales.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN CONTACTO -->
-    <section id="contacto">
-        <div class="encabezado-seccion reveal-element">
-            <h2>Contacto</h2>
-            <div class="linea-decorativa"></div>
-            <p>Canales institucionales habilitados para coordinar consultas corporativas con nuestro equipo directivo.</p>
-        </div>
-        <div class="contenedor-contacto">
-            <div class="info-contacto reveal-element">
-                <h3>Sede Central</h3>
-                <div class="bloque-dato">
-                    <label>Ubicación</label>
-                    <p>Av. Corrientes 450, Piso 10, CABA, Argentina.</p>
-                </div>
-                <div class="bloque-dato">
-                    <label>Teléfono Corporativo</label>
-                    <p>+54 (11) 4321-5555</p>
-                </div>
-                <div class="bloque-dato">
-                    <label>Canal Oficial Electrónico</label>
-                    <p>contacto@rigantigeiler.com</p>
-                </div>
-            </div>
-            <div class="reveal-element">
-                <form class="formulario-contacto" onsubmit="event.preventDefault(); alert('Su requerimiento institucional ha sido enviado con éxito de manera confidencial.');">
-                    <input type="text" placeholder="Nombre y Apellido" required>
-                    <input type="email" placeholder="Correo corporativo" required>
-                    <div class="campo-ancho"><input type="text" placeholder="Empresa / Entidad Jurídica"></div>
-                    <div class="campo-ancho"><textarea placeholder="Detalle su consulta de forma estrictamente informativa..." rows="5" required></textarea></div>
-                    <button type="submit" class="boton-enviar">Enviar Requerimiento</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN INFORMAL DE CIERRE (MANTENIENDO TU FOTOGRAFÍA PREFERIDA) -->
-    <section class="seccion-cierre-marval" style="background-image: linear-gradient(rgba(7, 14, 27, 0.4), rgba(7, 14, 27, 0.75)), url('rgma2.png');">
-        <div class="contenido-cierre reveal-element">
-            <span class="subtitulo-cierre">Sumate a nuestro</span>
+    <span class="subtitulo-cierre">Sumate a nuestro</span>
             <h2 class="marca-redes">#ModoRGM</h2>
             <p class="descripcion-cierre">Buscamos profesionales apasionados que quieran desafiar los límites de la práctica jurídica tradicional en un entorno colaborativo y de vanguardia.</p>
- <!-- PIE DE PÁGINA (FOOTER COMPLETAMENTE CONSOLIDADO) -->
-    <footer style="background-color: var(--color-primario); color: #ffffff; padding: 80px 12% 40px 12%; border-top: 1px solid rgba(255,255,255,0.05);">
-        
-        <!-- ESTILOS INTERNOS AISLADOS PARA EL FOOTER -->
-        <style>
-            .bloques-footer-fijo {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-                gap: 50px;
-                margin-bottom: 60px;
-                text-align: left;
-            }
-            .columna-footer-fija h4 {
-                font-family: var(--fuente-titulos);
-                color: var(--color-secundario);
-                font-size: 1rem;
-                margin-bottom: 20px;
-                font-weight: 500;
-                letter-spacing: 0.5px;
-            }
-            .columna-footer-fija p {
-                color: rgba(255, 255, 255, 0.6);
-                font-size: 0.85rem;
-                line-height: 1.8;
-                font-weight: 300;
-            }
-            .columna-footer-fija ul {
-                list-style: none;
-                padding: 0;
-                margin: 0;
-            }
-            .columna-footer-fija ul li {
-                margin-bottom: 12px;
-            }
-            .columna-footer-fija ul li a {
-                color: rgba(255, 255, 255, 0.6);
-                font-size: 0.85rem;
-                text-decoration: none;
-                transition: color 0.3s ease;
-                font-weight: 300;
-            }
-            .columna-footer-fija ul li a:hover {
-                color: var(--color-secundario);
-            }
-        </style>
+            <a href="https://instagram.com" target="_blank" class="btn-instagram">Ver Oportunidades en Instagram</a>
+        </div>
+    </section>
 
+    <!-- FOOTER INSTITUCIONAL COMPLETO -->
+    <footer style="background-color: var(--color-primario); padding: 90px 12% 40px 12%; color: #ffffff; border-top: 1px solid rgba(197, 168, 128, 0.1);">
         <div class="bloques-footer-fijo">
             <div class="columna-footer-fija">
-                <h4>LA FIRMA</h4>
-                <p>Riganti, Geiler & Márquez Alluralde Abogados proporciona consultoría y defensa legal corporativa institucional de alta complejidad con un firme alcance global.</p>
+                <h4 style="font-family: var(--fuente-titulos); letter-spacing: 1px; margin-bottom: 25px;">RGM Abogados</h4>
+                <p style="line-height: 1.8; opacity: 0.7; font-weight: 300;">Soluciones jurídicas de alta complejidad y asesoramiento corporativo integral con alcance global y rigor técnico.</p>
             </div>
+            
             <div class="columna-footer-fija">
-                <h4>ÁREAS CLAVE</h4>
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#estudio">El Estudio</a></li>
+                    <li><a href="#practicas">Áreas de Práctica</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="columna-footer-fija">
+                <h4>Áreas Clave</h4>
                 <ul>
                     <li><a href="#practicas">Derecho Corporativo & M&A</a></li>
                     <li><a href="#practicas">Bancos & Finanzas</a></li>
-                    <li><a href="#practicas">Litigios & Arbitrajes</a></li>
+                    <li><a href="#practicas">Litigios Complejos</a></li>
+                    <li><a href="#practicas">Derecho Tributario</a></li>
                 </ul>
             </div>
+
             <div class="columna-footer-fija">
-                <h4>COBERTURA GLOBAL</h4>
-                <p>Mantenemos una red activa de corresponsalías y alianzas estratégicas operativas en las principales capitales financieras de América y Europa.</p>
+                <h4>Canales</h4>
+                <p style="margin-bottom: 10px; opacity: 0.7; font-weight: 300;">Sede CABA: Av. Corrientes 450</p>
+                <p style="margin-bottom: 10px; opacity: 0.7; font-weight: 300;">T: +54 (11) 4321-5555</p>
+                <p style="opacity: 0.7; font-weight: 300;">E: contacto@rigantigeiler.com</p>
             </div>
         </div>
-        
-        <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 25px; text-align: center; font-size: 0.8rem; color: rgba(255, 255, 255, 0.4); font-weight: 300;">
-            <p>© 2026 Riganti, Geiler & Márquez Alluralde - Abogados. Todos los derechos reservados. | Políticas de Confidencialidad</p>
+
+        <!-- Línea final de Copyright y firmas -->
+        <div style="border-top: 1px solid rgba(255, 255, 255, 0.06); padding-top: 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; font-size: 0.8rem; opacity: 0.6; font-weight: 300;">
+            <p>&copy; 2026 Riganti, Geiler & Márquez Alluralde. Todos los derechos reservados.</p>
+            <p>Diseño Digital de Alta Gama</p>
         </div>
     </footer>
-
-    <!-- INTERACTIVIDAD Y OPTIMIZACIÓN VISUAL (JAVASCRIPT) -->
+     <!-- INTERACCIONES Y LÓGICA JAVASCRIPT PREMIUM -->
     <script>
-        // 1. Reducción dinámica de la barra superior al hacer scroll
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.style.padding = '15px 8%';
-                header.style.backgroundColor = 'rgba(10, 17, 32, 0.99)';
-                header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.2)';
-            } else {
-                header.style.padding = '25px 8%';
-                header.style.backgroundColor = 'rgba(10, 17, 32, 0.96)';
-                header.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.05)';
-            }
-        });
-         </script> 
-
-     <!-- 🎥 ANIMACIÓN SCROLL REVEAL Y RECONFIGURACIÓN DE REFRESCO CORREGIDO -->
-<script>
-    const tarjetas = document.querySelectorAll('.tarjeta-corporativa');
-    const opcionesObservador = { threshold: 0.15, rootMargin: "0px 0px -40px 0px" };
-
-    const observador = new IntersectionObserver(function(entradas, observador) {
-        entradas.forEach(entrada => {
-            if (!entrada.isIntersecting) return;
+        document.addEventListener("DOMContentLoaded", () => {
             
-            // Añade la clase que hace visible la tarjeta al hacer scroll
-            entrada.target.classList.add('visible'); 
-            observador.unobserve(entrada.target);
+            // 1. Control Dinámico de la Barra de Navegación (Header) al hacer Scroll
+            const navbar = document.querySelector("header");
+            if (navbar) {
+                window.addEventListener("scroll", () => {
+                    if (window.scrollY > 40) {
+                        navbar.classList.add("scrolled");
+                    } else {
+                        navbar.classList.remove("scrolled");
+                    }
+                });
+            }
+
+            // 2. Intersection Observer Eficiente para el Revelado Suave de Secciones
+            const revealElements = document.querySelectorAll(".reveal-element");
+            
+            const revealOptions = {
+                threshold: 0.12, // Se dispara cuando el 12% del módulo es visible
+                rootMargin: "0px 0px -40px 0px" // Margen de anticipación premium
+            };
+
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("active");
+                        observer.unobserve(entry.target); // Deja de consumir memoria tras ejecutarse
+                    }
+                });
+            }, revealOptions);
+
+            revealElements.forEach(element => {
+                revealObserver.observe(element);
+            });
         });
-    }, opcionesObservador);
-
-    // Activamos el observador para cada una de las 6 tarjetas
-    tarjetas.forEach(tarjeta => {
-        observador.observe(tarjeta);
-    });
-
-    // Forzar al navegador a posicionarse arriba de todo al actualizar la página
-    if ('scrollRestoration' in history) {
-        history.scrollRestoration = 'manual';
-    }
-    window.scrollTo(0, 0);
-</script> 
-   
-    // ... (Tu script de la animación e IntersectionObserver termina aquí arriba)
-    window.scrollTo(0, 0);
-</script> 
-    <!-- BARRA FLOTANTE INTERACTIVA LATERAL REESTRUCTURADA -->
-    <div class="barra-flotante-contacto">
-        <!-- Ítem Correo -->
-        <a href="#contacto" class="item-flotante" title="Escribir Correo">
-            <span class="texto-flotante">CONTACTO</span>
-            <div class="icono-flotante">
-                <svg xmlns="http://w3.org" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-            </div>
-        </a>
-
-        <!-- Ítem Teléfono -->
-        <a href="tel:+541143215555" class="item-flotante" title="Llamar">
-            <span class="texto-flotante">LLAMAR</span>
-            <div class="icono-flotante">
-                <svg xmlns="http://w3.org" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-            </div>
-        </a>
-
-        <!-- Ítem Ubicación -->
-        <a href="#contacto" class="item-flotante" title="Sede Central">
-            <span class="texto-flotante">UBICACIÓN</span>
-            <div class="icono-flotante">
-                <svg xmlns="http://w3.org" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-            </div>
-        </a>
-
-        <!-- Ítem Idioma / Consulta -->
-        <a href="#contacto" class="item-flotante" title="English Version">
-            <span class="texto-flotante idioma-texto">ENGLISH</span>
-            <div class="icono-flotante">
-                <svg xmlns="http://w3.org" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-            </div>
-        </a>
-    </div>
+    </script>
 </body>
-</html> 
-
+</html>
