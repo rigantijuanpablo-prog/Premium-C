@@ -370,14 +370,23 @@
                 <span class="apellido-secundario">Alluralde - Abogados</span>
             </div>
         </a>
-        <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#estudio">El Estudio</a></li>
-                <li><a href="#practicas">Áreas</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
+       <nav>
+    <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#estudio">El Estudio</a></li>
+        <li><a href="#practicas">Prácticas</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <!-- Selector de Idioma Líquido Unificado -->
+        <li>
+            <div class="contenedor-idioma">
+                <div class="indicador-liquido" id="indicadorIdioma"></div>
+                <button class="btn-idioma activo" onclick="cambiarIdioma('es', this)">ES</button>
+                <button class="btn-idioma" onclick="cambiarIdioma('en', this)">EN</button>
+            </div>
+        </li>
+    </ul>
+</nav>
+
     </header>
 
     <!-- 2. BARRA FLOTANTE INTERACTIVA LATERAL -->
