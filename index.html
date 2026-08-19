@@ -262,17 +262,17 @@ nav ul li a:hover {
             color: var(--color-secundario);
         }
 
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background-color: var(--color-secundario);
-            transition: width 0.4s var(--bezier-premium);
-        }
-
+    
+nav ul li a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 2px;
+    position: relative; /* <--- AGREGA ESTA LÍNEA */
+    display: inline-block; /* <--- RECOMENDADO: Da mejor control sobre el ancho */
+}
         nav ul li a:hover::after {
             width: 100%;
         }
@@ -560,7 +560,9 @@ nav ul li a:hover {
             </div>
         </a>
     </div>
-    <span class="subtitulo-cierre">Sumate a nuestro</span>
+  <section class="seccion-cierre-marval" style="background-color: var(--color-primario);">
+        <div class="contenido-cierre">
+            <span class="subtitulo-cierre">Sumate a nuestro</span>
             <h2 class="marca-redes">#ModoRGM</h2>
             <p class="descripcion-cierre">Buscamos profesionales apasionados que quieran desafiar los límites de la práctica jurídica tradicional en un entorno colaborativo y de vanguardia.</p>
             <a href="https://instagram.com" target="_blank" class="btn-instagram">Ver Oportunidades en Instagram</a>
@@ -646,6 +648,53 @@ nav ul li a:hover {
                 revealObserver.observe(element);
             });
         });
+          <!-- 1. BARRA DE NAVEGACIÓN SUPERIOR -->
+    <header>
+        <a href="#inicio" class="marca-estudio">
+            <span class="sigla-premium">RGM</span>
+            <div class="nombre-estudio">
+                <span class="apellido-principal">Riganti, Geiler & Márquez</span>
+                <span class="apellido-secundario">Alluralde - Abogados</span>
+            </div>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#estudio">El Estudio</a></li>
+                <li><a href="#practicas">Áreas</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 2. BARRA FLOTANTE INTERACTIVA LATERAL -->
+    <div class="barra-flotante-contacto">
+        <!-- Aquí van tus ítems de correo, llamar y ubicación con sus SVG -->
+    </div>
+
+    <!-- 3. SECCIÓN DE INSTAGRAM CORREGIDA -->
+    <section class="seccion-cierre-marval" style="background-color: var(--color-primario);">
+        <div class="contenido-cierre">
+            <span class="subtitulo-cierre">Sumate a nuestro</span>
+            <h2 class="marca-redes">#ModoRGM</h2>
+            <p class="descripcion-cierre">Buscamos profesionales apasionados que quieran desafiar los límites de la práctica jurídica tradicional en un entorno colaborativo y de vanguardia.</p>
+            <a href="https://instagram.com" target="_blank" class="btn-instagram">Ver Oportunidades en Instagram</a>
+        </div>
+    </section>
+
+    <!-- 4. TU FOOTER (El bloque azul oscuro con los datos de contacto que me pasaste antes) -->
+    <footer style="background-color: var(--color-primario); padding: 90px 12% 40px 12%; color: #ffffff; border-top: 1px solid rgba(197, 168, 128, 0.1);">
+        <!-- ... Todo el contenido del footer que ya tenías ... -->
+    </footer>
+
+    <!-- 5. SCRIPTS JAVASCRIPT (Al final del cuerpo) -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // ... Toda tu lógica del scroll y revelado suave ...
+        });
     </script>
+
+<!-- 6. FINAL ABSOLUTO DEL ARCHIVO (NADA puede ir debajo de esto) -->
 </body>
-</html> 
+</html>
+   
