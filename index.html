@@ -1,626 +1,107 @@
+
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-AR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Riganti, Geiler & Márquez Alluralde - Abogados</title>
-    <!-- Fuentes Corporativas de Élite -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <style>
-        /* --- VARIABLES DE DISEÑO PREMIUM --- */
-        :root {
-            --color-primario: #070e1b;     /* Azul medianoche profundo */
-            --color-secundario: #c5a880;   /* Dorado satinado institucional */
-            --color-fondo-claro: #f8fafc;  /* Gris premium ultra limpio */
-            --color-texto-oscuro: #1e293b;
-            --color-texto-suave: #64748b; 
-            --fuente-titulos: 'Cinzel', serif;
-            --fuente-cuerpo: 'Montserrat', sans-serif;
-            --bezier-premium: cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: var(--fuente-cuerpo);
-            color: var(--color-texto-oscuro);
-            background-color: #ffffff;
-            line-height: 1.8;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* --- BARRA DE NAVEGACIÓN TRANSLÚCIDA PREMIUM --- */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(7, 14, 27, 0.85); 
-            backdrop-filter: blur(20px);              
-            -webkit-backdrop-filter: blur(20px);
-            padding: 24px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(197, 168, 128, 0.08);
-            transition: padding 0.4s var(--bezier-premium), background-color 0.4s var(--bezier-premium);
-        }
-
-        header.scrolled {
-            padding: 14px 8%; 
-            background-color: rgba(7, 14, 27, 0.95);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .marca-estudio {
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            transition: opacity 0.3s var(--bezier-premium);
-            height: 100%;
-        }
-
-        .marca-estudio:hover { opacity: 0.85; }
-
-        .sigla-premium {
-            font-family: var(--fuente-titulos);
-            color: var(--color-secundario) !important;
-            font-size: 1.4rem;
-            font-weight: 500;
-            letter-spacing: 3px;
-            border-right: 1px solid rgba(197, 168, 128, 0.25);
-            padding-right: 20px;
-            line-height: 1;
-            user-select: none;
-        }
-
-        .nombre-estudio {
-            font-family: var(--fuente-titulos);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .nombre-estudio .apellido-principal {
-            display: block;
-            font-weight: 500;
-            font-size: 1.15rem;
-            letter-spacing: 1.5px;
-            line-height: 1.15;
-            color: #ffffff !important;
-        }
-
-        .nombre-estudio .apellido-secundario {
-            display: block;
-            font-weight: 300;
-            font-size: 0.85rem;
-            letter-spacing: 2px;
-            color: rgba(255, 255, 255, 0.75) !important;
-            margin-top: 4px;
-            line-height: 1.15;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 40px;
-            align-items: center;
-        }
-
-        nav ul li a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            font-weight: 500;
-            letter-spacing: 2px;
-            position: relative;
-            display: inline-block;
-        }
-
-        nav ul li a:hover { color: var(--color-secundario); }
-
-        /* --- INFRAESTRUCTURA DE REVELADO (SCROLL REVEAL) --- */
-        .reveal-element {
-            opacity: 0;
-            transform: translateY(25px);
-            transition: opacity 1s var(--bezier-premium), transform 1s var(--bezier-premium);
-        }
-
-        .reveal-element.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* --- SECCIONES ESTRUCTURALES GENERALES --- */
-        section {
-            padding: 140px 12%;
-            clear: both;
-        }
-
-        .encabezado-seccion {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 90px auto;
-        }
-
-        .encabezado-seccion h2 {
-            font-family: var(--fuente-titulos);
-            font-size: 2.4rem;
-            color: var(--color-primario);
-            font-weight: 500;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
-        }
-
-        .encabezado-seccion .linea-decorativa {
-            width: 40px;
-            height: 1px;
-            background-color: var(--color-secundario);
-            margin: 0 auto 25px auto;
-        }
-
-        .encabezado-seccion p { color: var(--color-texto-suave); font-size: 1rem; }
-
-        .contenedor-estudio {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 70px;
-            align-items: center;
-        }
-
-        .texto-estudio p {
-            color: var(--color-texto-oscuro);
-            margin-bottom: 25px;
-            font-size: 1.05rem;
-            text-align: justify;
-            font-weight: 300;
-        }
-
-        .lista-valores {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 35px;
-        }
-
-        .tarjeta-valor {
-            border-left: 2px solid var(--color-secundario);
-            padding-left: 25px;
-            transition: transform 0.4s var(--bezier-premium);
-        }
-
-        .tarjeta-valor:hover { transform: translateX(6px); }
-
-        .tarjeta-valor h4 {
-            font-family: var(--fuente-titulos);
-            font-size: 1.15rem;
-            color: var(--color-primario);
-            margin-bottom: 8px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-
-        .tarjeta-valor p { color: var(--color-texto-suave); font-size: 0.95rem; }
-
-        .grid-corporativo {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 35px;
-        }
-
-        .tarjeta-corporativa {
-            background-color: #ffffff;
-            padding: 55px 40px;
-            border: 1px solid rgba(7, 14, 27, 0.06);
-            border-radius: 4px;
-            transition: all 0.4s var(--bezier-premium);
-        }
-
-        .tarjeta-corporativa:hover {
-            transform: translateY(-8px);
-            border-color: var(--color-secundario);
-            box-shadow: 0 30px 60px rgba(7, 14, 27, 0.04);
-        }
-
-        .tarjeta-corporativa h3 {
-            font-family: var(--fuente-titulos);
-            color: var(--color-primario);
-            font-size: 1.3rem;
-            margin-bottom: 18px;
-            font-weight: 500;
-        }
-
-        .tarjeta-corporativa p { color: var(--color-texto-suave); font-size: 0.95rem; }
-
-        .seccion-cierre-marval {
-            position: relative;
-            padding: 160px 20px; 
-            text-align: center;
-            color: #ffffff;
-        }
-
-        .contenido-cierre { max-width: 650px; margin: 0 auto; }
-
-        .subtitulo-cierre {
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 600;
-            color: var(--color-secundario);
-            display: block;
-            margin-bottom: 15px;
-        }
-
-        .marca-redes {
-            font-size: 54px;
-            font-weight: 700;
-            margin: 0 0 20px 0;
-            font-family: var(--fuente-titulos);
-        }
-
-        .descripcion-cierre { font-size: 18px; margin-bottom: 35px; }
-
-        .btn-instagram {
-            display: inline-block;
-            background-color: var(--color-secundario);
-            color: var(--color-primario);
-            text-decoration: none;
-            padding: 14px 35px;
-            font-size: 16px;
-            font-weight: 600;
-            border-radius: 4px;
-            transition: all 0.4s var(--bezier-premium);
-        }
-
-        .btn-instagram:hover { background-color: #b0936b; transform: translateY(-4px); }
-
-        /* --- BARRA LATERAL --- */
-        .barra-flotante-contacto {
-            position: fixed;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 9999;
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-        }
-
-        .item-flotante {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            background-color: var(--color-primario);
-            border-left: 2px solid var(--color-secundario);
-            color: #ffffff;
-            text-decoration: none;
-            height: 50px;
-            min-width: 50px;
-            transition: all 0.5s var(--bezier-premium);
-            overflow: hidden;
-        }
-
-        .icono-flotante { width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-        .texto-flotante {
-            white-space: nowrap;
-            font-size: 13px;
-            font-weight: 500;
-            max-width: 0;
-            opacity: 0;
-            transition: all 0.5s var(--bezier-premium);
-        }
-
-        .item-flotante:hover { background-color: var(--color-secundario); }
- .item-flotante:hover .texto-flotante { 
-            max-width: 150px; 
-            padding: 0 15px 0 20px; 
-            opacity: 1; 
-            color: var(--color-primario); 
-        }
-
-        .bloques-footer-fijo {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 40px;
-            margin-bottom: 50px;
-        }
-
-        .columna-footer-fija h4 { 
-            font-family: var(--fuente-titulos); 
-            color: var(--color-secundario); 
-            font-size: 0.95rem; 
-            margin-bottom: 20px; 
-        }
-
-        .columna-footer-fija p, .columna-footer-fija ul li a { 
-            color: rgba(255, 255, 255, 0.6); 
-            font-size: 0.85rem; 
-            text-decoration: none; 
-        }
-
-        .columna-footer-fija ul { list-style: none; padding: 0; }
-        .columna-footer-fija ul li { margin-bottom: 10px; }
-        .columna-footer-fija ul li a:hover { color: var(--color-secundario); }
-
-        @media (max-width: 992px) {
-            header { padding: 20px 5%; flex-direction: column; gap: 15px; }
-            nav ul { gap: 20px; }
-            section { padding: 100px 5%; }
-            .contenedor-estudio { grid-template-columns: 1fr; gap: 50px; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RGMA División Fútbol y Actividades Deportivas | Fichajes, Contratos y Gestiones AFA</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Inter',sans-serif}
+body{background:#F8FAFC;color:#1E293B}
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:8px 3.5%;background:#fff;border-bottom:1px solid #E2E8F0;position:sticky;top:0;z-index:50}
+.hero{padding:64px 5% 36px;background:#fff;text-align:center}
+.search-box{margin:0 auto;background:#fff;padding:26px;border-radius:14px;box-shadow:0 8px 32px rgba(15,23,42,.07);max-width:600px;border:1px solid #F1F5F9;text-align:left}
+.app-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px}
+.app-btn{padding:13px;border:1.5px solid #CBD5E1;background:#fff;border-radius:8px;font-weight:600;cursor:pointer;font-size:.88rem}
+.app-btn.active{background:#0F172A;color:#fff;border-color:#0F172A}
+.btn-submit{width:100%;padding:15px;background:#0F172A;color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer}
+.evidence-section{padding:72px 5%;background:#fff;text-align:center;border-top:1px solid #F1F5F9}
+.evidence-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:1100px;margin:0 auto}
+.evidence-card{border:1px solid #F1F5F9;border-left:3px solid #0F172A;padding:24px;text-align:left;border-radius:0 8px 8px 0;background:#F8FAFC}
+.corporate-bridge{background:#0a1120;padding:84px 5%;text-align:center}
+.whatsapp-float{position:fixed;bottom:32px;right:28px;width:68px;height:68px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(37,211,102,.4),0 4px 12px rgba(0,0,0,.15);z-index:99;transition:.2s;text-decoration:none}
+.whatsapp-float:hover{transform:scale(1.08)}
+.whatsapp-float::before{content:'';position:absolute;width:100%;height:100%;border-radius:50%;background:#25D366;animation:whatsapp-pulse 2s infinite;z-index:-1}
+@keyframes whatsapp-pulse{0%{transform:scale(1);opacity:.7}70%{transform:scale(1.3);opacity:0}100%{transform:scale(1.3);opacity:0}}
+.badge{display:inline-block;background:#FEF3C7;color:#92400E;padding:6px 12px;border-radius:20px;font-size:.78rem;font-weight:700;margin-bottom:14px}
+@media(max-width:768px){.evidence-grid{grid-template-columns:1fr}.whatsapp-float{width:70px;height:70px;bottom:90px;right:18px}}
+</style>
 </head>
 <body>
- <!-- 1. BARRA DE NAVEGACIÓN SUPERIOR RESTAURADA -->
-    <header>
-        <a href="#inicio" class="marca-estudio">
-            <span class="sigla-premium">RGM</span>
-            <div class="nombre-estudio">
-                <span class="apellido-principal">Riganti, Geiler & Márquez</span>
-                <span class="apellido-secundario">Alluralde - Abogados</span>
-            </div>
-        </a>
-       <nav>
-    <ul>
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#estudio">El Estudio</a></li>
-        <li><a href="#practicas">Prácticas</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-        <!-- Selector de Idioma Líquido Unificado -->
-        <li>
-            <div class="contenedor-idioma">
-                <div class="indicador-liquido" id="indicadorIdioma"></div>
-                <button class="btn-idioma activo" onclick="cambiarIdioma('es', this)">ES</button>
-                <button class="btn-idioma" onclick="cambiarIdioma('en', this)">EN</button>
-            </div>
-        </li>
-    </ul>
+
+<nav class="navbar">
+  <img src="RGMA-FUTBOL-Y-ACTIVIDADES-blanco.jpg" alt="RGMA División Fútbol y Actividades Deportivas" style="height:82px;width:auto;display:block">
+  <a href="https://rigantijuanpablo-prog.github.io/web-ai/" style="padding:.7rem 1.2rem;border:1.5px solid #0F172A;color:#0F172A;text-decoration:none;font-weight:600;border-radius:6px;font-size:.88rem">Portal Corporativo</a>
 </nav>
 
-    </header>
-
-    <!-- 2. BARRA FLOTANTE INTERACTIVA LATERAL -->
-    <div class="barra-flotante-contacto">
-        <a href="#contacto" class="item-flotante" title="Escribir Correo">
-            <span class="texto-flotante">CONTACTO</span>
-            <div class="icono-flotante">
-                <svg xmlns="http://w3.org" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-            </div>
-        </a>
-        <a href="tel:+541143215555" class="item-flotante" title="Llamar">
-             <span class="texto-flotante">LLAMAR</span>
-            <div class="icono-flotante">
-                <svg xmlns="http://w3.org" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-            </div>
-        </a>
-        <a href="#contacto" class="item-flotante" title="Sede Central">
-            <span class="texto-flotante">UBICACIÓN</span>
-            <div class="icono-flotante">
-                <svg xmlns="http://w3.org" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-            </div>
-        </a>
+<section class="hero">
+  <div class="badge">DIVISIÓN FÚTBOL Y ACTIVIDADES DEPORTIVAS EN GENERAL • GESTIONES ANTE AFA</div>
+  <h1 style="font-size:clamp(2rem,4.5vw,2.9rem);color:#0F172A;max-width:880px;margin:0 auto 16px;line-height:1.05;font-weight:800">¿Te quieren hacer <span style="color:#c5a880">firmar, fichar o contratar?</span> No firmes sin auditoría legal.</h1>
+  <p style="color:#475569;max-width:760px;margin:0 auto 28px;font-size:1.05rem;line-height:1.5">RGMA División Fútbol y Actividades Deportivas en General. Auditamos tu contrato en 24hs, protegemos tu porcentaje de pase, primas y derechos. Gestionamos <strong>fichaje, contrato, boleto, Comet, TMS y reclamos ante AFA, Agremiados y FIFA</strong> para fútbol y todas las disciplinas.</p>
+  
+  <div class="search-box">
+    <p style="font-weight:700;margin-bottom:12px;color:#0F172A">¿Qué te quieren hacer firmar?</p>
+    <div class="app-grid">
+      <button class="app-btn" data-situ="Fichaje AFA / Primer contrato profesional">Fichaje AFA / Primer contrato</button>
+      <button class="app-btn" data-situ="Contrato profesional / Renovación">Contrato / Renovación</button>
+      <button class="app-btn" data-situ="Pase / Préstamo / Transferencia">Pase / Préstamo</button>
+      <button class="app-btn" data-situ="Rescisión / Deuda / Actividades Deportivas">Rescisión / Deuda</button>
     </div>
-<!-- 3. SECCIÓN PRESENTACIÓN PRINCIPAL (HERO) RESTAURADA -->
-    <section id="inicio" style="padding: 220px 12% 140px 12%; background-color: var(--color-primario); color: #ffffff; text-align: center;">
-        <div class="reveal-element active">
-            <h1 style="font-family: var(--fuente-titulos); font-size: 3.5rem; font-weight: 400; letter-spacing: 2px; margin-bottom: 20px; line-height: 1.2;">Riganti, Geiler & Márquez Alluralde</h1>
-            <p style="font-size: 1.2rem; color: var(--color-secundario); letter-spacing: 3px; text-transform: uppercase; font-weight: 500;">Asesoramiento Jurídico Corporativo Premium</p>
-        </div>
-    </section>
+    <form id="leadForm">
+      <input type="hidden" id="selectedSitu">
+      <input type="text" placeholder="Nombre del deportista" required style="width:100%;padding:13px;border:1.5px solid #CBD5E1;border-radius:8px;margin-bottom:12px">
+      <input type="text" placeholder="Disciplina / Club / Edad / Categoría (Fútbol, Futsal, Voley, etc)" required style="width:100%;padding:13px;border:1.5px solid #CBD5E1;border-radius:8px;margin-bottom:12px">
+      <input type="tel" placeholder="WhatsApp (jugador o familiar)" required style="width:100%;padding:13px;border:1.5px solid #CBD5E1;border-radius:8px;margin-bottom:14px">
+      <button type="submit" class="btn-submit">Auditar contrato ante AFA gratis →</button>
+      <p style="font-size:.78rem;color:#94A3B8;text-align:center;margin-top:10px">Respuesta en 24hs • Secreto profesional • Sin anticipo</p>
+    </form>
+  </div>
+</section>
 
-    <!-- 4. SECCIÓN EL ESTUDIO Y VALORES RESTAURADA -->
-    <section id="estudio">
-        <div class="encabezado-seccion reveal-element active">
-            <h2>El Estudio</h2>
-            <div class="linea-decorativa"></div>
-            <p>Excelencia, rigor técnico y compromiso institucional.</p>
-        </div>
-        <div class="contenedor-estudio">
-            <div class="texto-estudio reveal-element active">
-                <p>Nuestra firma se compone de profesionales enfocados en brindar soluciones legales estratégicas para empresas e instituciones de alta complejidad, adaptándonos de manera ágil a los desafíos del mercado global actual.</p>
-            </div>
-            <div class="lista-valores">
-                <div class="tarjeta-valor reveal-element active">
-                    <h4>Visión Global</h4>
-                    <p>Estructuras jurídicas sólidas con proyección y alcance internacional.</p>
-                </div>
-                <div class="tarjeta-valor reveal-element active">
-                    <h4>Rigor Técnico</h4>
-                    <p>Análisis minucioso y soluciones sofisticadas a medida de cada cliente.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="evidence-section">
+  <h2 style="font-size:1.8rem;color:#0F172A">Protocolo de Firma Segura</h2>
+  <p style="color:#64748B;margin:8px auto 36px;max-width:700px">Un contrato mal firmado te deja sin porcentaje y atado años. Lo evitamos.</p>
+  <div style="width:32px;height:3px;background:#c5a880;margin:0 auto 36px"></div>
+  <div class="evidence-grid">
+    <div class="evidence-card"><h3>1. Mandá lo que te quieren hacer firmar</h3><p style="color:#64748B;font-size:.88rem">Contrato, planilla de fichaje AFA, acuerdo privado, boleto de compraventa de derechos económicos, convenios de actividades deportivas.</p></div>
+    <div class="evidence-card"><h3>2. Auditoría integral</h3><p style="color:#64748B;font-size:.88rem">Duración, salario, primas, % de pase, derechos de formación, imagen, cláusula de rescisión y salida, multas encubiertas.</p></div>
+    <div class="evidence-card"><h3>3. Gestión integral ante AFA y Federaciones</h3><p style="color:#64748B;font-size:.88rem">Fichaje, registro de contrato profesional, sistema Comet, TMS FIFA, Agremiados, Confederaciones y Federaciones de actividades deportivas en general.</p></div>
+    <div class="evidence-card"><h3>4. Negociación y defensa</h3><p style="color:#64748B;font-size:.88rem">Mejoramos condiciones y defendemos tu carrera. Reclamos por deuda, falta de registro, libertad de acción. Solo cobramos si vos cobrás.</p></div>
+  </div>
+  <div style="margin:48px auto 0;max-width:960px;background:#0F172A;color:#fff;padding:28px;border-radius:12px;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;text-align:center">
+    <div><div style="font-size:1.25rem;font-weight:800;color:#c5a880">AFA</div><div style="font-size:.78rem;color:#94A3B8">Fichajes</div></div>
+    <div><div style="font-size:1.25rem;font-weight:800;color:#c5a880">COMET / TMS</div><div style="font-size:.78rem;color:#94A3B8">FIFA</div></div>
+    <div><div style="font-size:1.25rem;font-weight:800;color:#c5a880">AAA</div><div style="font-size:.78rem;color:#94A3B8">Agremiados</div></div>
+    <div><div style="font-size:1.25rem;font-weight:800;color:#c5a880">TODAS</div><div style="font-size:.78rem;color:#94A3B8">Las disciplinas</div></div>
+  </div>
+</section>
 
-    <!-- 5. SECCIÓN ÁREAS DE PRÁCTICA (GRID CORPORATIVO) RESTAURADA -->
-    <section id="practicas" style="background-color: var(--color-fondo-claro);">
-        <div class="encabezado-seccion reveal-element active">
-            <h2>Áreas de Práctica</h2>
-            <div class="linea-decorativa"></div>
-            <p>Servicios especializados de alta complejidad corporativa.</p>
-        </div>
-        <div class="grid-corporativo">
-            <div class="tarjeta-corporativa reveal-element active">
-                <h3>Derecho Corporativo & M&A</h3>
-                <p>Asesoramiento integral en fusiones, adquisiciones, contratos comerciales complejos y reestructuraciones societarias.</p>
-            </div>
-            <div class="tarjeta-corporativa reveal-element active">
-                <h3>Bancos & Finanzas</h3>
-                <p>Estructuración de operaciones financieras, regulaciones bancarias, mercado de capitales y financiamiento de proyectos.</p>
-            </div>
-            <div class="tarjeta-corporativa reveal-element active">
-                <h3>Litigios Complejos</h3>
-                <p>Representación estratégica en disputas comerciales de alta sensibilidad, arbitrajes nacionales e internacionales.</p>
-            </div>
-            <div class="tarjeta-corporativa reveal-element active">
-                <h3>Derecho Tributario</h3>
-                <p>Planificación fiscal corporativa, consultoría impositiva y defense en litigios contra organismos fiscales.</p>
-            </div>
-        </div>
-    </section>
-      <!-- 6. SECCIÓN DE INSTAGRAM -->
-    <section class="seccion-cierre-marval" style="background-color: var(--color-primario);">
-        <div class="contenido-cierre">
-            <span class="subtitulo-cierre">Sumate a nuestro</span>
-            <h2 class="marca-redes">#ModoRGM</h2>
-            <p class="descripcion-cierre">Buscamos profesionales apasionados que quieran desafiar los límites de la práctica jurídica tradicional en un entorno colaborativo y de vanguardia.</p>
-            <a href="https://instagram.com" target="_blank" class="btn-instagram">Ver Oportunidades en Instagram</a>
-        </div>
-    </section>
+<section class="corporate-bridge">
+  <p style="color:#c5a880;letter-spacing:5px;font-size:.68rem;margin-bottom:36px;font-weight:600;text-transform:uppercase">
+    <span style="font-size:1.25rem;font-weight:700;letter-spacing:2px">RGMA</span> <span style="opacity:.8">RESPALDADO POR</span>
+  </p>
+  <img src="rgma-fondoazul.jpg" alt="Riganti, Geiler & Marquez Alluralde" style="max-width:860px;width:96%;height:auto;margin:0 auto 42px;display:block">
+  <p style="color:#94A3B8;max-width:760px;margin:0 auto;line-height:1.6">La División Fútbol y Actividades Deportivas en General RGMA es coordinada institucionalmente por el estudio corporativo Riganti, Geiler & Márquez Alluralde. Asistencia letrada en contrataciones, fichajes, pases, préstamos, rescisiones, reclamos salariales y gestiones completas ante AFA y federaciones. Secreto profesional.</p>
+  <a href="https://rigantijuanpablo-prog.github.io/web-ai/" style="display:inline-block;margin-top:32px;padding:14px 32px;background:#fff;color:#0F172A;text-decoration:none;font-weight:700;border-radius:6px">Portal Corporativo</a>
+  <div style="margin-top:44px;padding-top:28px;border-top:1px solid rgba(255,255,255,.08);display:flex;gap:22px;justify-content:center;color:#94A3B8;font-size:.85rem;flex-wrap:wrap">
+    <span>✓ Gestores AFA habilitados</span><span>✓ Fútbol y Actividades Deportivas en General</span><span>✓ Sin anticipo</span>
+  </div>
+</section>
 
-    <!-- 7. FOOTER INSTITUCIONAL -->
-    <footer style="background-color: var(--color-primario); padding: 90px 12% 40px 12%; color: #ffffff; border-top: 1px solid rgba(197, 168, 128, 0.1);">
-        <div class="bloques-footer-fijo">
-            <div class="columna-footer-fija">
-                <h4 style="font-family: var(--fuente-titulos); letter-spacing: 1px; margin-bottom: 25px;">RGM Abogados</h4>
-                <p style="line-height: 1.8; opacity: 0.7; font-weight: 300;">Soluciones jurídicas de alta complejidad y asesoramiento corporativo integral con alcance global y rigor técnico.</p>
-            </div>
-            <div class="columna-footer-fija">
-                <h4>Navegación</h4>
-                <ul>
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#estudio">El Estudio</a></li>
-                    <li><a href="#practicas">Áreas de Práctica</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
-            </div>
- <div class="columna-footer-fija">
-                <h4>Áreas Clave</h4>
-                <ul>
-                    <li><a href="#practicas">Derecho Corporativo & M&A</a></li>
-                    <li><a href="#practicas">Bancos & Finanzas</a></li>
-                    <li><a href="#practicas">Litigios Complejos</a></li>
-                    <li><a href="#practicas">Derecho Tributario</a></li>
-                </ul>
-            </div>
-            <div class="columna-footer-fija">
-                <h4>Canales</h4>
-                <p style="margin-bottom: 10px; opacity: 0.7; font-weight: 300;">Sede CABA: Av. Corrientes 450</p>
-                <p style="margin-bottom: 10px; opacity: 0.7; font-weight: 300;">T: +54 (11) 4321-5555</p>
-                <p style="opacity: 0.7; font-weight: 300;">E: contacto@rigantigeiler.com</p>
-            </div>
-        </div>
-        <div style="border-top: 1px solid rgba(255, 255, 255, 0.06); padding-top: 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; font-size: 0.8rem; opacity: 0.6; font-weight: 300;">
-            <p>&copy; 2026 Riganti, Geiler & Márquez Alluralde. Todos los derechos reservados.</p>
-            <p>Diseño Digital de Alta Gama</p>
-        </div>
-    </footer>
+<a href="https://wa.me/5491135565078?text=Hola%20RGMA%20Divisi%C3%B3n%20F%C3%BAtbol%20y%20Actividades%20Deportivas%2C%20me%20quieren%20fichar%2Ffirmar%2Fcontratar%20y%20quiero%20auditoria%20antes%20de%20firmar%20ante%20AFA" class="whatsapp-float" aria-label="WhatsApp RGMA" target="_blank">
+  <svg width="36" height="36" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M19.05 4.91A9.82 9.82 0 0 0 12.05 2C6.55 2 2.05 6.5 2.05 12C2.05 13.77 2.52 15.49 3.38 17L2.05 22L7.2 20.65C8.55 21.38 10.08 21.77 11.64 21.77H11.65C17.15 21.77 21.65 17.27 21.65 11.77C21.65 9.14 20.63 6.68 19.05 4.91ZM11.65 19.73C10.15 19.73 8.68 19.33 7.41 18.58L7.11 18.4L4.05 19.22L4.89 16.27L4.68 15.95C3.82 14.58 3.36 12.99 3.36 11.35C3.36 6.77 7.09 3.05 11.67 3.05C13.89 3.05 15.97 3.91 17.54 5.48C19.11 7.05 19.97 9.13 19.97 11.35C19.97 15.93 16.24 19.73 11.65 19.73ZM16.21 13.65C15.96 13.52 14.73 12.92 14.5 12.84C14.27 12.75 14.11 12.71 13.94 12.96C13.77 13.21 13.29 13.77 13.14 13.94C13 14.11 12.85 14.13 12.6 14C12.35 13.87 11.56 13.61 10.62 12.77C9.91 12.14 9.43 11.36 9.29 11.11C9.14 10.86 9.27 10.72 9.4 10.6C9.51 10.49 9.66 10.31 9.8 10.16C9.94 10.02 9.99 9.91 10.08 9.74C10.17 9.57 10.13 9.42 10.06 9.3C9.99 9.17 9.49 7.94 9.28 7.44C9.08 6.95 8.87 7.02 8.72 7.01H8.26C8.09 7.01 7.81 7.07 7.58 7.32C7.35 7.57 6.71 8.17 6.71 9.4C6.71 10.63 7.6 11.81 7.74 12C7.88 12.19 9.5 14.68 11.96 15.77C12.55 16.02 13.01 16.17 13.37 16.28C13.86 16.44 14.31 16.42 14.67 16.39C15.07 16.36 15.9 15.89 16.07 15.37C16.24 14.85 16.24 14.41 16.19 14.32C16.13 14.23 15.96 14.14 15.71 14.01L16.21 13.65Z"/></svg>
+</a>
 
-       <!-- INTERACCIONES Y LÓGICA JAVASCRIPT PREMIUM -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            
-            // ==========================================
-            // 1. CONTROL DE PRELOADER DE MARCA
-            // ==========================================
-            const preloader = document.getElementById("preloader");
-            if (preloader) {
-                // Al cargarse la estructura, desvanecemos suavemente el fondo protector
-                window.addEventListener("load", () => {
-                    setTimeout(() => {
-                        preloader.classList.add("ocultar");
-                    }, 600); // 600ms de branding intencional refinado
-                });
-                
-                // Mecanismo de respaldo por si el evento 'load' tarda en dispararse
-                setTimeout(() => {
-                    preloader.classList.add("ocultar");
-                }, 1500);
-            }
-
-            // ==========================================
-            // 2. SMART HEADER (MENÚ INTELIGENTE DE SCROLL INVERSO)
-            // ==========================================
-            const navbar = document.querySelector("header");
-            let ultimoScrollTop = 0;
-            const margenDesplazamiento = 5; // Evita parpadeos por movimientos milimétricos
-
-            if (navbar) {
-                window.addEventListener("scroll", () => {
-                    let scrollTopActual = window.pageYOffset || document.documentElement.scrollTop;
-                    
-                    // Control de tamaño y opacidad base (Tu efecto original "Scrolled")
-                    if (scrollTopActual > 40) {
-                        navbar.classList.add("scrolled");
-                    } else {
-                        navbar.classList.remove("scrolled");
-                    }
-
-                    // Lógica de Scroll Inverso Inteligente
-                    if (Math.abs(ultimoScrollTop - scrollTopActual) <= margenDesplazamiento) return;
-                    
-                    if (scrollTopActual > ultimoScrollTop && scrollTopActual > 120) {
-                        // Usuario baja: ocultamos el navbar para dar espacio limpio de lectura
-                        navbar.classList.add("nav-oculto");
-                    } else {
-                        // Usuario sube o está arriba de todo: reaparece el menú de inmediato
-                        navbar.classList.remove("nav-oculto");
-                    }
-                    
-                    ultimoScrollTop = scrollTopActual;
-                });
-            }
-
-            // ==========================================
-            // 3. INTERSECTION OBSERVER (REVELADO SUAVE DE TEXTOS)
-            // ==========================================
-            const revealElements = document.querySelectorAll(".reveal-element");
-            
-            const revealOptions = {
-                threshold: 0.12,
-                rootMargin: "0px 0px -40px 0px"
-            };
-
-            const revealObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("active");
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, revealOptions);
-
-            revealElements.forEach(element => {
-                revealObserver.observe(element);
-            });
-        });
-
-        // ==========================================
-        // 4. LÓGICA DEL SELECTOR DE IDIOMAS LÍQUIDO
-        // ==========================================
-        function cambiarIdioma(codigoIdioma, botonSeleccionado) {
-            // Remover clase activa de todos los botones de ese contenedor
-            const botones = botonSeleccionado.parentElement.querySelectorAll(".btn-idioma");
-            botones.forEach(btn => btn.classList.remove("activo"));
-            
-            // Activar el botón correspondiente
-            botonSeleccionado.classList.add("activo");
-            
-            // Desplazar el indicador líquido de fondo (efecto muelle de Apple)
-            const indicador = document.getElementById("indicadorIdioma");
-            if (indicador) {
-                if (codigoIdioma === 'en') {
-                    // Se desplaza horizontalmente hacia el segundo botón (EN)
-                    indicador.style.transform = "translateX(44px)";
-                } else {
-                    // Regresa a la posición inicial (ES)
-                    indicador.style.transform = "translateX(0px)";
-                }
-            }
-            
-            // Aquí puedes disparar tu lógica futura de traducción de contenidos
-            console.log(`Entorno institucional cambiado a: ${codigoIdioma.toUpperCase()}`);
-        }
-    </script>
+<script>
+const btns=document.querySelectorAll('.app-btn');
+btns.forEach(b=>b.addEventListener('click',()=>{btns.forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById('selectedSitu').value=b.dataset.situ;}));
+document.getElementById('leadForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const situ=document.getElementById('selectedSitu').value||'Consulta Futbol y Actividades Deportivas';
+  const txt=`Hola RGMA División Fútbol y Actividades Deportivas, ${situ}. Quiero auditoria antes de firmar/fichar ante AFA.`;
+  window.open(`https://wa.me/5491135565078?text=${encodeURIComponent(txt)}`,'_blank');
+});
+</script>
 </body>
 </html>
