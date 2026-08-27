@@ -1,96 +1,86 @@
 
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="es-AR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RGMA División Fútbol y Actividades Deportivas | Fichajes, Contratos y Gestiones AFA</title>
+<title>RGMA División Fútbol y Gaming | Contratos, Fichajes y Gestiones AFA</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0;font-family:'Inter',sans-serif}
-body{background:#F8FAFC;color:#1E293B}
-.navbar{display:flex;justify-content:space-between;align-items:center;padding:8px 3.5%;background:#fff;border-bottom:1px solid #E2E8F0;position:sticky;top:0;z-index:50}
-.hero{padding:64px 5% 36px;background:#fff;text-align:center}
-.search-box{margin:0 auto;background:#fff;padding:26px;border-radius:14px;box-shadow:0 8px 32px rgba(15,23,42,.07);max-width:600px;border:1px solid #F1F5F9;text-align:left}
-.app-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px}
-.app-btn{padding:13px;border:1.5px solid #CBD5E1;background:#fff;border-radius:8px;font-weight:600;cursor:pointer;font-size:.88rem}
-.app-btn.active{background:#0F172A;color:#fff;border-color:#0F172A}
-.btn-submit{width:100%;padding:15px;background:#0F172A;color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer}
-.evidence-section{padding:72px 5%;background:#fff;text-align:center;border-top:1px solid #F1F5F9}
+body{background:#F1F5F9;color:#1E293B;padding-bottom:100px}
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:10px 3.5%;background:#fff;border-bottom:1.5px solid #E2E8F0;position:sticky;top:0;z-index:50}
+.hero{padding:56px 5% 88px;background:linear-gradient(180deg, #ffffff 0%, #F8FAFC 100%);text-align:center}
+.search-box{margin:0 auto;background:#fff;padding:28px;border-radius:16px;box-shadow:0 12px 40px rgba(15,23,42,.10);max-width:600px;border:1.5px solid #c5a880;text-align:left;margin-bottom:40px}
+.app-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px}
+.app-btn{padding:16px 12px;border:1.5px solid #E2E8F0;background:#F8FAFC;border-radius:10px;font-weight:600;cursor:pointer;font-size:.85rem;line-height:1.25;transition:.15s;color:#334155}
+.app-btn:hover{border-color:#c5a880;background:#fff}
+.app-btn.active{background:#c5a880;color:#0F172A;border-color:#c5a880;font-weight:800;box-shadow:0 4px 12px rgba(197,168,128,.3)}
+.app-btn.active span{color:#0F172A !important}
+.btn-submit{width:100%;padding:16px;background:#0F172A;color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer;font-size:.95rem;transition:.2s}
+.btn-submit:hover{background:#020617}
+.evidence-section{padding:72px 5%;background:#fff;text-align:center;border-top:1px solid #E2E8F0}
 .evidence-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:1100px;margin:0 auto}
-.evidence-card{border:1px solid #F1F5F9;border-left:3px solid #0F172A;padding:24px;text-align:left;border-radius:0 8px 8px 0;background:#F8FAFC}
+.evidence-card{border:1px solid #F1F5F9;border-left:3px solid #c5a880;padding:24px;text-align:left;border-radius:0 10px 10px 0;background:#FFFEFB;box-shadow:0 2px 8px rgba(0,0,0,.02)}
 .corporate-bridge{background:#0a1120;padding:84px 5%;text-align:center}
-.whatsapp-float{position:fixed;bottom:32px;right:28px;width:68px;height:68px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(37,211,102,.4),0 4px 12px rgba(0,0,0,.15);z-index:99;transition:.2s;text-decoration:none}
-.whatsapp-float:hover{transform:scale(1.08)}
+.whatsapp-float{position:fixed;bottom:24px;right:24px;width:62px;height:62px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(37,211,102,.4);z-index:99;text-decoration:none}
 .whatsapp-float::before{content:'';position:absolute;width:100%;height:100%;border-radius:50%;background:#25D366;animation:whatsapp-pulse 2s infinite;z-index:-1}
 @keyframes whatsapp-pulse{0%{transform:scale(1);opacity:.7}70%{transform:scale(1.3);opacity:0}100%{transform:scale(1.3);opacity:0}}
-.badge{display:inline-block;background:#FEF3C7;color:#92400E;padding:6px 12px;border-radius:20px;font-size:.78rem;font-weight:700;margin-bottom:14px}
-@media(max-width:768px){.evidence-grid{grid-template-columns:1fr}.whatsapp-float{width:70px;height:70px;bottom:90px;right:18px}}
+.badge{display:inline-block;background:#0F172A;color:#c5a880;padding:8px 16px;border-radius:20px;font-size:.75rem;font-weight:800;margin-bottom:16px;letter-spacing:.8px;border:1px solid rgba(197,168,128,.3)}
+@media(max-width:768px){.evidence-grid{grid-template-columns:1fr}.hero{padding:32px 5% 60px}.whatsapp-float{bottom:20px;right:16px;width:60px;height:60px}}
 </style>
 </head>
 <body>
 
 <nav class="navbar">
-  <img src="RGMA-FUTBOL-Y-ACTIVIDADES-blanco.jpg" alt="RGMA División Fútbol y Actividades Deportivas" style="height:82px;width:auto;display:block">
-  <a href="https://rigantijuanpablo-prog.github.io/web-ai/" style="padding:.7rem 1.2rem;border:1.5px solid #0F172A;color:#0F172A;text-decoration:none;font-weight:600;border-radius:6px;font-size:.88rem">Portal Corporativo</a>
+  <img src="rgma-futbol-gaming-blanco.jpg" alt="RGMA División Fútbol y Gaming" style="height:74px;width:auto;display:block">
+  <a href="https://rigantijuanpablo-prog.github.io/web-ai/" style="padding:.6rem 1.1rem;border:1.5px solid #0F172A;color:#0F172A;text-decoration:none;font-weight:600;border-radius:6px;font-size:.85rem">Portal Corporativo</a>
 </nav>
 
 <section class="hero">
-  <div class="badge">DIVISIÓN FÚTBOL Y ACTIVIDADES DEPORTIVAS EN GENERAL • GESTIONES ANTE AFA</div>
-  <h1 style="font-size:clamp(2rem,4.5vw,2.9rem);color:#0F172A;max-width:880px;margin:0 auto 16px;line-height:1.05;font-weight:800">¿Te quieren hacer <span style="color:#c5a880">firmar, fichar o contratar?</span> No firmes sin auditoría legal.</h1>
-  <p style="color:#475569;max-width:760px;margin:0 auto 28px;font-size:1.05rem;line-height:1.5">RGMA División Fútbol y Actividades Deportivas en General. Auditamos tu contrato en 24hs, protegemos tu porcentaje de pase, primas y derechos. Gestionamos <strong>fichaje, contrato, boleto, Comet, TMS y reclamos ante AFA, Agremiados y FIFA</strong> para fútbol y todas las disciplinas.</p>
+  <div class="badge">DIVISIÓN FÚTBOL Y GAMING • AFA / COMET / FIFA</div>
+  <h1 style="font-size:clamp(1.9rem,4.5vw,2.75rem);color:#0F172A;max-width:840px;margin:0 auto 14px;line-height:1.05;font-weight:800">¿Te quieren hacer <span style="color:#c5a880">firmar, fichar o contratar?</span> No firmes sin auditoría.</h1>
+  <p style="color:#475569;max-width:700px;margin:0 auto 28px;font-size:1rem;line-height:1.6">Auditamos tu contrato en 24hs. Protegemos tu pase, primas y derechos. Gestionamos <strong style="color:#0F172A">fichaje, contrato, Comet, TMS y reclamos ante AFA, Agremiados y FIFA</strong> para fútbol y eSports.</p>
   
   <div class="search-box">
-    <p style="font-weight:700;margin-bottom:12px;color:#0F172A">¿Qué te quieren hacer firmar?</p>
+    <p style="font-weight:800;margin-bottom:14px;color:#0F172A;font-size:1.05rem">¿En qué situación te tienen?</p>
     <div class="app-grid">
-      <button class="app-btn" data-situ="Fichaje AFA / Primer contrato profesional">Fichaje AFA / Primer contrato</button>
-      <button class="app-btn" data-situ="Contrato profesional / Renovación">Contrato / Renovación</button>
-      <button class="app-btn" data-situ="Pase / Préstamo / Transferencia">Pase / Préstamo</button>
-      <button class="app-btn" data-situ="Rescisión / Deuda / Actividades Deportivas">Rescisión / Deuda</button>
+      <button class="app-btn" data-situ="PRIMER CONTRATO - Me quieren fichar en AFA">PRIMER CONTRATO<br><span style="font-weight:400;font-size:.78rem;color:#64748B">Me quieren fichar en AFA</span></button>
+      <button class="app-btn" data-situ="RENOVACION - Me apuran para firmar">RENOVACIÓN<br><span style="font-weight:400;font-size:.78rem;color:#64748B">Me apuran para firmar</span></button>
+      <button class="app-btn" data-situ="PASE / PRESTAMO - Me venden o ceden">PASE / PRÉSTAMO<br><span style="font-weight:400;font-size:.78rem;color:#64748B">Me venden o ceden</span></button>
+      <button class="app-btn" data-situ="DEUDA / GAMING - No me pagan o contrato eSports">DEUDA / GAMING<br><span style="font-weight:400;font-size:.78rem;color:#64748B">No me pagan / eSports</span></button>
     </div>
     <form id="leadForm">
       <input type="hidden" id="selectedSitu">
-      <input type="text" placeholder="Nombre del deportista" required style="width:100%;padding:13px;border:1.5px solid #CBD5E1;border-radius:8px;margin-bottom:12px">
-      <input type="text" placeholder="Disciplina / Club / Edad / Categoría (Fútbol, Futsal, Voley, etc)" required style="width:100%;padding:13px;border:1.5px solid #CBD5E1;border-radius:8px;margin-bottom:12px">
-      <input type="tel" placeholder="WhatsApp (jugador o familiar)" required style="width:100%;padding:13px;border:1.5px solid #CBD5E1;border-radius:8px;margin-bottom:14px">
-      <button type="submit" class="btn-submit">Auditar contrato ante AFA gratis →</button>
-      <p style="font-size:.78rem;color:#94A3B8;text-align:center;margin-top:10px">Respuesta en 24hs • Secreto profesional • Sin anticipo</p>
+      <input type="text" placeholder="Nombre del jugador / gamer" required style="width:100%;padding:13px;border:1.5px solid #E2E8F0;border-radius:8px;margin-bottom:12px;background:#F8FAFC">
+      <input type="text" placeholder="Club / Organización / Edad / Juego" required style="width:100%;padding:13px;border:1.5px solid #E2E8F0;border-radius:8px;margin-bottom:12px;background:#F8FAFC">
+      <input type="tel" placeholder="WhatsApp" required style="width:100%;padding:13px;border:1.5px solid #E2E8F0;border-radius:8px;margin-bottom:16px;background:#F8FAFC">
+      <button type="submit" class="btn-submit">Auditar mi contrato gratis →</button>
+      <p style="font-size:.75rem;color:#94A3B8;text-align:center;margin-top:12px">Respuesta en 24hs • Secreto profesional • Sin anticipo</p>
     </form>
   </div>
 </section>
 
 <section class="evidence-section">
-  <h2 style="font-size:1.8rem;color:#0F172A">Protocolo de Firma Segura</h2>
-  <p style="color:#64748B;margin:8px auto 36px;max-width:700px">Un contrato mal firmado te deja sin porcentaje y atado años. Lo evitamos.</p>
-  <div style="width:32px;height:3px;background:#c5a880;margin:0 auto 36px"></div>
+  <h2 style="font-size:1.6rem;color:#0F172A;font-weight:800">Protocolo de Firma Segura</h2>
+  <div style="width:40px;height:3px;background:#c5a880;margin:12px auto 32px;border-radius:2px"></div>
   <div class="evidence-grid">
-    <div class="evidence-card"><h3>1. Mandá lo que te quieren hacer firmar</h3><p style="color:#64748B;font-size:.88rem">Contrato, planilla de fichaje AFA, acuerdo privado, boleto de compraventa de derechos económicos, convenios de actividades deportivas.</p></div>
-    <div class="evidence-card"><h3>2. Auditoría integral</h3><p style="color:#64748B;font-size:.88rem">Duración, salario, primas, % de pase, derechos de formación, imagen, cláusula de rescisión y salida, multas encubiertas.</p></div>
-    <div class="evidence-card"><h3>3. Gestión integral ante AFA y Federaciones</h3><p style="color:#64748B;font-size:.88rem">Fichaje, registro de contrato profesional, sistema Comet, TMS FIFA, Agremiados, Confederaciones y Federaciones de actividades deportivas en general.</p></div>
-    <div class="evidence-card"><h3>4. Negociación y defensa</h3><p style="color:#64748B;font-size:.88rem">Mejoramos condiciones y defendemos tu carrera. Reclamos por deuda, falta de registro, libertad de acción. Solo cobramos si vos cobrás.</p></div>
-  </div>
-  <div style="margin:48px auto 0;max-width:960px;background:#0F172A;color:#fff;padding:28px;border-radius:12px;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;text-align:center">
-    <div><div style="font-size:1.25rem;font-weight:800;color:#c5a880">AFA</div><div style="font-size:.78rem;color:#94A3B8">Fichajes</div></div>
-    <div><div style="font-size:1.25rem;font-weight:800;color:#c5a880">COMET / TMS</div><div style="font-size:.78rem;color:#94A3B8">FIFA</div></div>
-    <div><div style="font-size:1.25rem;font-weight:800;color:#c5a880">AAA</div><div style="font-size:.78rem;color:#94A3B8">Agremiados</div></div>
-    <div><div style="font-size:1.25rem;font-weight:800;color:#c5a880">TODAS</div><div style="font-size:.78rem;color:#94A3B8">Las disciplinas</div></div>
+    <div class="evidence-card"><h3 style="color:#0F172A">1. Foto del contrato</h3><p style="color:#64748B;font-size:.88rem;margin-top:6px">Mandá por WhatsApp el contrato AFA, acuerdo privado, contrato gaming / eSports o planilla de fichaje.</p></div>
+    <div class="evidence-card"><h3 style="color:#0F172A">2. Auditoría dorada</h3><p style="color:#64748B;font-size:.88rem;margin-top:6px">Duración, salario, primas, % de pase, derechos de formación, imagen, cláusula de rescisión, eSports y streaming.</p></div>
+    <div class="evidence-card"><h3 style="color:#0F172A">3. Gestión ante AFA y orgs Gaming</h3><p style="color:#64748B;font-size:.88rem;margin-top:6px">Fichaje, registro de contrato, Comet, TMS FIFA, Agremiados, y registro de contratos de Gaming / eSports.</p></div>
+    <div class="evidence-card"><h3 style="color:#0F172A">4. Negociación</h3><p style="color:#64748B;font-size:.88rem;margin-top:6px">Mejoramos tu contrato. Reclamamos deuda. Solo cobramos si vos cobrás.</p></div>
   </div>
 </section>
 
 <section class="corporate-bridge">
-  <p style="color:#c5a880;letter-spacing:5px;font-size:.68rem;margin-bottom:36px;font-weight:600;text-transform:uppercase">
-    <span style="font-size:1.25rem;font-weight:700;letter-spacing:2px">RGMA</span> <span style="opacity:.8">RESPALDADO POR</span>
-  </p>
+  <p style="color:#c5a880;letter-spacing:5px;font-size:.68rem;margin-bottom:36px;font-weight:600;text-transform:uppercase"><span style="font-size:1.25rem;font-weight:700;letter-spacing:2px">RGMA</span> <span style="opacity:.8">RESPALDADO POR</span></p>
   <img src="rgma-fondoazul.jpg" alt="Riganti, Geiler & Marquez Alluralde" style="max-width:860px;width:96%;height:auto;margin:0 auto 42px;display:block">
-  <p style="color:#94A3B8;max-width:760px;margin:0 auto;line-height:1.6">La División Fútbol y Actividades Deportivas en General RGMA es coordinada institucionalmente por el estudio corporativo Riganti, Geiler & Márquez Alluralde. Asistencia letrada en contrataciones, fichajes, pases, préstamos, rescisiones, reclamos salariales y gestiones completas ante AFA y federaciones. Secreto profesional.</p>
+  <p style="color:#94A3B8;max-width:720px;margin:0 auto;line-height:1.6">División Fútbol y Gaming RGMA coordinada por Riganti, Geiler & Márquez Alluralde. Fútbol profesional, formativo, eSports y Gaming. Gestiones completas ante AFA.</p>
   <a href="https://rigantijuanpablo-prog.github.io/web-ai/" style="display:inline-block;margin-top:32px;padding:14px 32px;background:#fff;color:#0F172A;text-decoration:none;font-weight:700;border-radius:6px">Portal Corporativo</a>
-  <div style="margin-top:44px;padding-top:28px;border-top:1px solid rgba(255,255,255,.08);display:flex;gap:22px;justify-content:center;color:#94A3B8;font-size:.85rem;flex-wrap:wrap">
-    <span>✓ Gestores AFA habilitados</span><span>✓ Fútbol y Actividades Deportivas en General</span><span>✓ Sin anticipo</span>
-  </div>
 </section>
 
-<a href="https://wa.me/5491135565078?text=Hola%20RGMA%20Divisi%C3%B3n%20F%C3%BAtbol%20y%20Actividades%20Deportivas%2C%20me%20quieren%20fichar%2Ffirmar%2Fcontratar%20y%20quiero%20auditoria%20antes%20de%20firmar%20ante%20AFA" class="whatsapp-float" aria-label="WhatsApp RGMA" target="_blank">
-  <svg width="36" height="36" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M19.05 4.91A9.82 9.82 0 0 0 12.05 2C6.55 2 2.05 6.5 2.05 12C2.05 13.77 2.52 15.49 3.38 17L2.05 22L7.2 20.65C8.55 21.38 10.08 21.77 11.64 21.77H11.65C17.15 21.77 21.65 17.27 21.65 11.77C21.65 9.14 20.63 6.68 19.05 4.91ZM11.65 19.73C10.15 19.73 8.68 19.33 7.41 18.58L7.11 18.4L4.05 19.22L4.89 16.27L4.68 15.95C3.82 14.58 3.36 12.99 3.36 11.35C3.36 6.77 7.09 3.05 11.67 3.05C13.89 3.05 15.97 3.91 17.54 5.48C19.11 7.05 19.97 9.13 19.97 11.35C19.97 15.93 16.24 19.73 11.65 19.73ZM16.21 13.65C15.96 13.52 14.73 12.92 14.5 12.84C14.27 12.75 14.11 12.71 13.94 12.96C13.77 13.21 13.29 13.77 13.14 13.94C13 14.11 12.85 14.13 12.6 14C12.35 13.87 11.56 13.61 10.62 12.77C9.91 12.14 9.43 11.36 9.29 11.11C9.14 10.86 9.27 10.72 9.4 10.6C9.51 10.49 9.66 10.31 9.8 10.16C9.94 10.02 9.99 9.91 10.08 9.74C10.17 9.57 10.13 9.42 10.06 9.3C9.99 9.17 9.49 7.94 9.28 7.44C9.08 6.95 8.87 7.02 8.72 7.01H8.26C8.09 7.01 7.81 7.07 7.58 7.32C7.35 7.57 6.71 8.17 6.71 9.4C6.71 10.63 7.6 11.81 7.74 12C7.88 12.19 9.5 14.68 11.96 15.77C12.55 16.02 13.01 16.17 13.37 16.28C13.86 16.44 14.31 16.42 14.67 16.39C15.07 16.36 15.9 15.89 16.07 15.37C16.24 14.85 16.24 14.41 16.19 14.32C16.13 14.23 15.96 14.14 15.71 14.01L16.21 13.65Z"/></svg>
+<a href="https://wa.me/5491135565078?text=Hola%20RGMA%20F%C3%BAtbol%20y%20Gaming%2C%20quiero%20auditoria%20antes%20de%20firmar%20ante%20AFA" class="whatsapp-float" aria-label="WhatsApp RGMA" target="_blank">
+  <svg width="32" height="32" viewBox="0 0 24 24" fill="white"><path d="M19.05 4.91A9.82 9.82 0 0 0 12.05 2C6.55 2 2.05 6.5 2.05 12C2.05 13.77 2.52 15.49 3.38 17L2.05 22L7.2 20.65C8.55 21.38 10.08 21.77 11.64 21.77H11.65C17.15 21.77 21.65 17.27 21.65 11.77C21.65 9.14 20.63 6.68 19.05 4.91ZM11.65 19.73C10.15 19.73 8.68 19.33 7.41 18.58L7.11 18.4L4.05 19.22L4.89 16.27L4.68 15.95C3.82 14.58 3.36 12.99 3.36 11.35C3.36 6.77 7.09 3.05 11.67 3.05C13.89 3.05 15.97 3.91 17.54 5.48C19.11 7.05 19.97 9.13 19.97 11.35C19.97 15.93 16.24 19.73 11.65 19.73ZM16.21 13.65C15.96 13.52 14.73 12.92 14.5 12.84C14.27 12.75 14.11 12.71 13.94 12.96C13.77 13.21 13.29 13.77 13.14 13.94C13 14.11 12.85 14.13 12.6 14C12.35 13.87 11.56 13.61 10.62 12.77C9.91 12.14 9.43 11.36 9.29 11.11C9.14 10.86 9.27 10.72 9.4 10.6C9.51 10.49 9.66 10.31 9.8 10.16C9.94 10.02 9.99 9.91 10.08 9.74C10.17 9.57 10.13 9.42 10.06 9.3C9.99 9.17 9.49 7.94 9.28 7.44C9.08 6.95 8.87 7.02 8.72 7.01H8.26C8.09 7.01 7.81 7.07 7.58 7.32C7.35 7.57 6.71 8.17 6.71 9.4C6.71 10.63 7.6 11.81 7.74 12C7.88 12.19 9.5 14.68 11.96 15.77C12.55 16.02 13.01 16.17 13.37 16.28C13.86 16.44 14.31 16.42 14.67 16.39C15.07 16.36 15.9 15.89 16.07 15.37C16.24 14.85 16.24 14.41 16.19 14.32C16.13 14.23 15.96 14.14 15.71 14.01L16.21 13.65Z"/></svg>
 </a>
 
 <script>
@@ -98,10 +88,10 @@ const btns=document.querySelectorAll('.app-btn');
 btns.forEach(b=>b.addEventListener('click',()=>{btns.forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById('selectedSitu').value=b.dataset.situ;}));
 document.getElementById('leadForm').addEventListener('submit',e=>{
   e.preventDefault();
-  const situ=document.getElementById('selectedSitu').value||'Consulta Futbol y Actividades Deportivas';
-  const txt=`Hola RGMA División Fútbol y Actividades Deportivas, ${situ}. Quiero auditoria antes de firmar/fichar ante AFA.`;
+  const situ=document.getElementById('selectedSitu').value||'Consulta Futbol y Gaming';
+  const txt=`Hola RGMA Fútbol y Gaming, ${situ}. Quiero auditoria antes de firmar ante AFA.`;
   window.open(`https://wa.me/5491135565078?text=${encodeURIComponent(txt)}`,'_blank');
 });
 </script>
 </body>
-</html>
+</html>   
